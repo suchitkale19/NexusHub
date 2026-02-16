@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { DataContext } from "../../DataContext";
 import { useContext } from "react";
 import MovieCard from "./MovieCard";
@@ -12,16 +13,22 @@ function HeroSection() {
       <Swiper
         id="cardContainer"
         style={{
-          padding: "40px 0px",
-
+          padding: "0px 200px",
+          display: "flex",
           "--swiper-navigation-color": "#fff",
           "--swiper-navigation-size": "28px",
+          "--swiper-pagination-color": "#fff",
         }}
         loop={true}
-        spaceBetween={10}
+        spaceBetween={50}
         slidesPerView={1}
         navigation={true}
-        modules={[Navigation]}
+        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Navigation, Pagination, Autoplay]}
         loopAdditionalSlides={1}
         observer={true}
         observeParents={true}

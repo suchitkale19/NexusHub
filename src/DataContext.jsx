@@ -8,14 +8,14 @@ function DataProvider({ children }) {
   const KEY = "27e203c1";
   const query = "dangal";
 
-  const sliderMoviesArr = [
-    "dhurandhar",
-    "fight club",
-    "superman",
-    "interstellar",
-    "american psycho",
-    "dangal",
-  ];
+  // const sliderMoviesArr = [
+  //   "dhurandhar",
+  //   "fight club",
+  //   "superman",
+  //   "interstellar",
+  //   "american psycho",
+  //   "dangal",
+  // ];
 
   useEffect(() => {
     async function fetchMovies() {
@@ -29,6 +29,15 @@ function DataProvider({ children }) {
   }, [query]);
 
   useEffect(() => {
+    const sliderMoviesArr = [
+      "dhurandhar",
+      "fight club",
+      "superman",
+      "interstellar",
+      "american psycho",
+      "dangal",
+    ];
+
     async function fetchSliderMovies() {
       try {
         const results = await Promise.all(
