@@ -9,15 +9,19 @@ import MovieCard from "./MovieCard";
 function HeroSection() {
   const { sliderMovies } = useContext(DataContext);
   return (
-    <div>
+    <>
       <Swiper
         id="cardContainer"
         style={{
           padding: "0px 200px",
           display: "flex",
           "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-bullet-inactive-color": "#666",
           "--swiper-navigation-size": "28px",
           "--swiper-pagination-color": "#fff",
+          "--swiper-pagination-bullet-width": "40px",
+          "--swiper-pagination-bullet-border-radius": "10px",
+          "--swiper-pagination-bullet-height": "5px",
         }}
         loop={true}
         spaceBetween={50}
@@ -43,7 +47,7 @@ function HeroSection() {
           <p className="text-text">loading</p>
         )}
       </Swiper>
-    </div>
+    </>
   );
 }
 

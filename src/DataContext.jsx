@@ -5,17 +5,11 @@ const DataContext = createContext();
 function DataProvider({ children }) {
   const [movies, setMovies] = useState();
   const [sliderMovies, setSliderMovies] = useState([]);
+  const [latestMovies, setLatestMovies] = useState([]);
+  const [tvShows, setTvshows] = useState([]);
+  const [topPicks, setTopPicks] = useState([]);
   const KEY = "27e203c1";
-  const query = "dangal";
-
-  // const sliderMoviesArr = [
-  //   "dhurandhar",
-  //   "fight club",
-  //   "superman",
-  //   "interstellar",
-  //   "american psycho",
-  //   "dangal",
-  // ];
+  const query = "12th fail  ";
 
   useEffect(() => {
     async function fetchMovies() {
@@ -29,37 +23,92 @@ function DataProvider({ children }) {
   }, [query]);
 
   useEffect(() => {
-    const sliderMoviesArr = [
-      "dhurandhar",
-      "fight club",
-      "superman",
-      "interstellar",
-      "american psycho",
-      "dangal",
-    ];
-
-    async function fetchSliderMovies() {
+    const fetchMovies = async (arr, setter) => {
       try {
         const results = await Promise.all(
-          sliderMoviesArr.map(async (movie) => {
-            const res = await fetch(
-              `https://www.omdbapi.com/?apikey=${KEY}&t=${movie}`,
-            );
-            return res.json();
-          }),
+          arr.map((movie) =>
+            fetch(`https://www.omdbapi.com/?apikey=${KEY}&t=${movie}`).then(
+              (res) => res.json(),
+            ),
+          ),
         );
-
-        setSliderMovies(results);
+        setter(results);
       } catch (err) {
         console.error(err);
       }
-    }
+    };
 
-    fetchSliderMovies();
+    fetchMovies(
+      [
+        "dhurandhar",
+        "fight club",
+        "superman",
+        "interstellar",
+        "american psycho",
+        "dangal",
+        "Ne Zha 2",
+      ],
+      setSliderMovies,
+    );
+
+    fetchMovies(
+      [
+        "avatar fire and ash",
+        "mission impossible the final reckoning",
+        "Ne Zha 2",
+        "Jurassic World: Rebirth",
+        "a minecraft movie",
+        "Mardaani 3",
+        "Superman",
+        "Zootopia 2",
+        "dhurandhar",
+      ],
+      setLatestMovies,
+    );
+
+    fetchMovies(
+      [
+        "Avengers: Endgame",
+        "the dark knight",
+        "Titanic",
+        "Spider-Man: No Way Home",
+        "Spider-Man: Across the Spider-Verse",
+        "Avatar",
+        "Inside Out 2",
+        "12th fail",
+        "3 idiots",
+      ],
+      setTopPicks,
+    );
+    fetchMovies(
+      [
+        "Squid game",
+        "breaking bad",
+        "the boys",
+        "dexter",
+        "stranger things",
+        "invincible",
+        "one piece",
+        "suits",
+        "better call saul",
+        "the office",
+      ],
+      setTvshows,
+    );
   }, []);
+
   console.log(sliderMovies);
   return (
-    <DataContext.Provider value={{ movies, sliderMovies, setMovies }}>
+    <DataContext.Provider
+      value={{
+        movies,
+        topPicks,
+        tvShows,
+        latestMovies,
+        sliderMovies,
+        setMovies,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
