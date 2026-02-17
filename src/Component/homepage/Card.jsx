@@ -2,14 +2,6 @@ import { useState } from "react";
 
 function Card({ movie }) {
   const [show, setShow] = useState(false);
-  //   const stringCongester = (str) => {
-  //     if (str.length > 21) {
-  //       const str1 = str.slice(0, 21);
-  //       return `${str1}...`;
-  //     } else {
-  //       return str;
-  //     }
-  //   };
   return (
     <div className="h-fit w-auto  rounded-2xl text-text">
       <img
@@ -22,7 +14,6 @@ function Card({ movie }) {
           onClick={() => setShow(!show)}
           className={`text-xl font-semibold ${show ? "" : "truncate "}`}
         >
-          {/* {stringCongester(movie.Title)} */}
           {movie.Title}
         </h1>
         <div className="flex w-full justify-between text-lg text-lightText">

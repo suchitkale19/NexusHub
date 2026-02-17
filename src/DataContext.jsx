@@ -8,6 +8,8 @@ function DataProvider({ children }) {
   const [latestMovies, setLatestMovies] = useState([]);
   const [tvShows, setTvshows] = useState([]);
   const [topPicks, setTopPicks] = useState([]);
+  const [oscarMovies, setOscarMovies] = useState([]);
+  const [animeSeries, setAnimeSeries] = useState([]);
   const KEY = "27e203c1";
   const query = "12th fail  ";
 
@@ -82,18 +84,49 @@ function DataProvider({ children }) {
     );
     fetchMovies(
       [
-        "Squid game",
+        "daredevil",
         "breaking bad",
         "the boys",
         "dexter",
         "stranger things",
-        "invincible",
-        "one piece",
+        "Squid game",
+        // "avatar the last airbender",
+        "game of thrones",
         "suits",
         "better call saul",
         "the office",
       ],
       setTvshows,
+    );
+    fetchMovies(
+      [
+        "Ben-hur",
+        "The Lord of the Rings: The Return of the King",
+        "Schindler's List",
+        "Gravity",
+        "Oppenheimer",
+        "West Side Story",
+        "Slumdog Millionaire",
+        "Gandhi",
+        "The Last Emperor",
+        "gigi",
+      ],
+      setOscarMovies,
+    );
+    fetchMovies(
+      [
+        "one piece",
+        "jujutsu kaisen",
+        "hunter x hunter",
+        "dragon ball z",
+        "black clover",
+        "avatar the last airbender",
+        "death note",
+        "one punch man",
+        "naruto",
+        "blue lock",
+      ],
+      setAnimeSeries,
     );
   }, []);
 
@@ -104,8 +137,10 @@ function DataProvider({ children }) {
         movies,
         topPicks,
         tvShows,
+        oscarMovies,
         latestMovies,
         sliderMovies,
+        animeSeries,
         setMovies,
       }}
     >
