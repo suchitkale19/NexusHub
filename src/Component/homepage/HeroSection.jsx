@@ -11,6 +11,7 @@ function HeroSection() {
   return (
     <>
       <Swiper
+        key={sliderMovies.length}
         id="cardContainer"
         style={{
           padding: "0px 200px",
@@ -33,7 +34,7 @@ function HeroSection() {
           disableOnInteraction: false,
         }}
         modules={[Navigation, Pagination, Autoplay]}
-        loopAdditionalSlides={1}
+        // loopAdditionalSlides={1}
         observer={true}
         observeParents={true}
       >
@@ -44,7 +45,7 @@ function HeroSection() {
             </SwiperSlide>
           ))
         ) : (
-          <p className="text-text">loading</p>
+          <MovieCard />
         )}
       </Swiper>
     </>

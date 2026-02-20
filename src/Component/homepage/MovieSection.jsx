@@ -13,13 +13,20 @@ function MovieSection({ title, movies }) {
           "--swiper-navigation-color": "#fff",
           "--swiper-navigation-size": "28px",
         }}
-        loop={false}
+        loop={true}
         spaceBetween={25}
         slidesPerView={5}
+        // centeredSlides={true}
         navigation={true}
         modules={[Navigation]}
         observer={true}
         observeParents={true}
+        breakpoints={{
+          360: { slidesPerView: 2 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 5 },
+        }}
       >
         {movies.length ? (
           movies.map((movie) => (
