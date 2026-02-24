@@ -1,6 +1,6 @@
 function MovieCard({ sliderMovie }) {
   return (
-    <div className="h-130 w-full bg-[url(/src/assets/sliderbg.png)] bg-cover bg-center">
+    <div className="h-130 w-full bg-[url(/src/assets/sliderbg.png)] bg-cover bg-center rounded-2xl ">
       <div className="h-full w-full rounded-2xl  flex items-center justify-between px-20 bg-linear-to-t from-background via-transparent via-90% to-background text-text text-5xl">
         {sliderMovie ? (
           <>

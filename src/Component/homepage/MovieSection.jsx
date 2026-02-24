@@ -5,8 +5,8 @@ import { Navigation } from "swiper/modules";
 import Card from "./Card";
 function MovieSection({ title, movies }) {
   return (
-    <div className=" h-fit w-full px-40 text-text text-3xl">
-      <h1 className="py-10">{title}...</h1>
+    <div className=" h-fit w-full px-40 py-10 text-text text-3xl">
+      <h1 className="pb-10">{title}...</h1>
       <Swiper
         id="cardContainer"
         style={{

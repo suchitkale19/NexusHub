@@ -10,19 +10,22 @@ function DataProvider({ children }) {
   const [topPicks, setTopPicks] = useState([]);
   const [oscarMovies, setOscarMovies] = useState([]);
   const [animeSeries, setAnimeSeries] = useState([]);
+  const [movie, setMovie] = useState();
+  const [detailedMovie, setDetailedMovie] = useState(null);
   const KEY = "27e203c1";
-  const query = "12th fail  ";
+  // const query = "12th fail  ";
 
   useEffect(() => {
     async function fetchMovies() {
       const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${KEY}&t=${query}`,
+        `http://www.omdbapi.com/?apikey=${KEY}&t=${movie}`,
       );
       const data = await res.json();
       console.log(data);
+      setDetailedMovie(data);
     }
     fetchMovies();
-  }, [query]);
+  }, [movie]);
 
   useEffect(() => {
     const fetchMovies = async (arr, setter) => {
@@ -90,7 +93,6 @@ function DataProvider({ children }) {
         "dexter",
         "stranger things",
         "Squid game",
-        // "avatar the last airbender",
         "game of thrones",
         "suits",
         "better call saul",
@@ -115,22 +117,21 @@ function DataProvider({ children }) {
     );
     fetchMovies(
       [
-        "one piece",
-        "jujutsu kaisen",
-        "hunter x hunter",
-        "dragon ball z",
-        "black clover",
-        "avatar the last airbender",
-        "death note",
-        "one punch man",
-        "naruto",
-        "blue lock",
+        "one piece film red",
+        "jujutsu kaisen 0",
+        "chainsaw man the movie reze arc",
+        "dragon ball super broly",
+        "black clover sword of the  wizard king",
+        "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train ",
+        "My Hero Academia: You're Next ",
+        "attack on titan the movie the last attack",
+        "the last naruto the movie",
+        "HAIKYU!! The Dumpster Battle",
       ],
       setAnimeSeries,
     );
   }, []);
 
-  console.log(sliderMovies);
   return (
     <DataContext.Provider
       value={{
@@ -142,6 +143,8 @@ function DataProvider({ children }) {
         sliderMovies,
         animeSeries,
         setMovies,
+        setMovie,
+        detailedMovie,
       }}
     >
       {children}

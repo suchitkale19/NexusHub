@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Card({ movie }) {
   const [show, setShow] = useState(false);
   return (
     <div className="h-fit w-auto  rounded-2xl text-text">
-      <img
-        className="h-80 rounded-2xl w-full object-cover"
-        src={movie.Poster}
-        alt={movie.Title}
-      />
+      <Link to={`details/${movie.Title}`}>
+        <img
+          className="h-80 rounded-2xl w-full object-cover"
+          src={movie.Poster}
+          alt={movie.Title}
+        />
+      </Link>
       <div className=" px-2 py-1 ">
         <h1
           onClick={() => setShow(!show)}
