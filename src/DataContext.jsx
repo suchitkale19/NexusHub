@@ -12,7 +12,8 @@ function DataProvider({ children }) {
   const [animeSeries, setAnimeSeries] = useState([]);
   const [movie, setMovie] = useState();
   const [detailedMovie, setDetailedMovie] = useState(null);
-  const KEY = "27e203c1";
+  const KEY = "614e0310";
+  // const KEY = "27e203c1";
   // const query = "12th fail  ";
 
   useEffect(() => {

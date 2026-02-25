@@ -6,6 +6,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { DataContext } from "../../DataContext";
 import { useContext } from "react";
 import MovieCard from "./MovieCard";
+import SkeletonMovieCard from "./SkeletonMovieCard";
 function HeroSection() {
   const { sliderMovies } = useContext(DataContext);
   return (
@@ -45,7 +46,9 @@ function HeroSection() {
             </SwiperSlide>
           ))
         ) : (
-          <MovieCard />
+          <SwiperSlide>
+            <SkeletonMovieCard />
+          </SwiperSlide>
         )}
       </Swiper>
     </>

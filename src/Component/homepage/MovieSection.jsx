@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Card from "./Card";
+import SkeletonCard from "./SkeletonCard";
 function MovieSection({ title, movies }) {
   return (
     <div className=" h-fit w-full px-40 py-10 text-text text-3xl">
@@ -28,15 +29,17 @@ function MovieSection({ title, movies }) {
           1280: { slidesPerView: 5 },
         }}
       >
-        {movies.length ? (
-          movies.map((movie) => (
-            <SwiperSlide key={movie.title}>
-              <Card movie={movie} />
-            </SwiperSlide>
-          ))
-        ) : (
-          <p className="text-text">loading</p>
-        )}
+        {movies.length
+          ? movies.map((movie) => (
+              <SwiperSlide key={movie.title}>
+                <Card movie={movie} />
+              </SwiperSlide>
+            ))
+          : Array.from({ length: 5 }, (_, i) => (
+              <SwiperSlide key={i}>
+                <SkeletonCard />
+              </SwiperSlide>
+            ))}
       </Swiper>
     </div>
   );

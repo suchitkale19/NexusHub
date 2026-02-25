@@ -14,13 +14,14 @@
 
 :root {
   --primary: #ffffff;
+  /* --background: #131320; */
   --background: #040409;
   --text: #ffffff;
   --lightText: rgb(214, 210, 210);
   --secondary: #111111;
   --border: #2a2a2a;
   --button: #732573;
-  --button2: indigo-800;
+  --button2: #3730a3;
   --logo: #a8aab3ff;
 }
 
