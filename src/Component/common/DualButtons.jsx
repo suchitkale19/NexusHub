@@ -1,8 +1,8 @@
-function DualButtons({ name1, name2, imdbID, Title }) {
+function DualButtons({ name1, name2, imdbID, Title, Type }) {
   return (
     <div className="flex gap-4">
       <a
-        href={`https://vidsrc.to/embed/movie/${imdbID}`}
+        href={`https://vidsrc.to/embed/${Type === "movie" ? "movie" : "tv"}/${imdbID}`}
         target="blank"
         className="text-lg font-semibold py-3 rounded-4xl px-6 border-2 border-border bg-button2 cursor-grab"
       >

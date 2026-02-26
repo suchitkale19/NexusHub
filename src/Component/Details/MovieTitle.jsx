@@ -7,10 +7,10 @@ function MovieTitle() {
   return (
     <div className="flex  justify-between items-center">
       <div className="grid gap-4">
-        <h1 className="text-5xl font-bold">{Title}</h1>
-        <div className="flex gap-10">
+        <h1 className="text-5xl font-bold w-[90%]">{Title}</h1>
+        <div className="flex gap-8">
           <h2>{Type.charAt(0).toUpperCase() + Type.slice(1)}</h2>|
-          <h2>{Runtime}</h2>|<h2>{Year}</h2>|<h2>Released on : {Released}</h2>
+          <h2>{Runtime}</h2>|<h2>{Year}</h2>
         </div>
       </div>
       <div>

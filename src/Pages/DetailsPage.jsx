@@ -4,19 +4,20 @@ import { DataContext } from "../DataContext";
 import MovieTitle from "../Component/Details/MovieTitle";
 import DualButtons from "../Component/common/DualButtons";
 import MovieGenre from "../Component/Details/MovieGenre";
-import MovieDetails from "../Component/Details/MovieDetails";
+import MovieDetails from "../Component/Details/MovieDetails1";
+import MovieDetails2 from "../Component/Details/MovieDetails2";
 
 function DetailsPage() {
   const { setMovie, detailedMovie } = useContext(DataContext);
   const title = useParams();
   useEffect(() => {
-    setMovie(title);
-  }, [title]);
-  const { Title, Poster, Plot, imdbID, Genre } = detailedMovie;
+    setMovie(title.title);
+  }, [setMovie, title]);
+  const { Title, Poster, Type, Plot, imdbID, Genre } = detailedMovie;
 
   return (
-    <div>
-      <div className="bg-background flex gap-20 text-text px-44 py-10">
+    <div className="bg-background">
+      <div className=" flex gap-20 text-text px-44 py-10">
         <div className="">
           <img className="h-111 w-auto rounded-3xl" src={Poster} />
         </div>
@@ -28,11 +29,13 @@ function DetailsPage() {
             name2={"Watch Trailer"}
             imdbID={imdbID}
             Title={Title}
+            Type={Type}
           />
           <MovieGenre Genre={Genre} />
           <MovieDetails detailedMovie={detailedMovie} />
         </div>
       </div>
+      <MovieDetails2 detailedMovie={detailedMovie} />
     </div>
   );
 }

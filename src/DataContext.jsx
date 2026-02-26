@@ -13,6 +13,7 @@ function DataProvider({ children }) {
   const [movie, setMovie] = useState();
   const [detailedMovie, setDetailedMovie] = useState(null);
   const KEY = "614e0310";
+  // const KEY = "b4dd08b";
   // const KEY = "27e203c1";
   // const query = "12th fail  ";
 
@@ -95,7 +96,7 @@ function DataProvider({ children }) {
         "stranger things",
         "Squid game",
         "game of thrones",
-        "suits",
+        "prison break",
         "better call saul",
         "the office",
       ],
