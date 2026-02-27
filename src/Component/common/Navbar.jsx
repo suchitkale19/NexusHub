@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { DataContext } from "../../DataContext";
+
 function Navbar() {
+  const { setShowSearch } = useContext(DataContext);
   const pages = ["Home", "Movies", "TV Shows", "Trending"];
   return (
-    <div className="h-28 w-full bg-background backdrop-blur-2xl text-text flex justify-between items-center px-20">
+    <div className="h-28 w-full bg-background text-text flex justify-between items-center px-20">
       <div className="flex justify-between gap-20">
         <h1 className="text-4xl">🎥 Nexus Hub</h1>
         <div className="sm-hidden  lg-hidden text-lightText flex justify-evenly items-center pt-2 gap-10 text-xl font-semibold">
@@ -17,6 +21,7 @@ function Navbar() {
         className="pt-2"
         src="/src/assets/searchIcon.svg"
         alt="search-logo"
+        onClick={() => setShowSearch(true)}
       />
     </div>
   );

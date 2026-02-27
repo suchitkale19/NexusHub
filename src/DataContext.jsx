@@ -12,10 +12,26 @@ function DataProvider({ children }) {
   const [animeSeries, setAnimeSeries] = useState([]);
   const [movie, setMovie] = useState();
   const [detailedMovie, setDetailedMovie] = useState(null);
-  const KEY = "614e0310";
-  // const KEY = "b4dd08b";
+  const [searchedMovie, setSearchedMovie] = useState([]);
+  const [showSearch, setShowSearch] = useState(false);
+  const [query, setQuery] = useState("");
+  // const KEY = "614e0310";
+  const KEY = "b4dd08b";
   // const KEY = "27e203c1";
   // const query = "12th fail  ";
+
+  useEffect(() => {
+    if (query.length < 3) return;
+    async function fetchMovies() {
+      const res = await fetch(
+        `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+      );
+      const data = await res.json();
+      console.log(data);
+      setSearchedMovie(data.Search || []);
+    }
+    fetchMovies();
+  }, [query]);
 
   useEffect(() => {
     async function fetchMovies() {
@@ -146,7 +162,12 @@ function DataProvider({ children }) {
         animeSeries,
         setMovies,
         setMovie,
+        query,
+        setQuery,
         detailedMovie,
+        showSearch,
+        setShowSearch,
+        searchedMovie,
       }}
     >
       {children}
