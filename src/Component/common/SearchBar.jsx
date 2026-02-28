@@ -5,7 +5,7 @@ function SearchBar() {
   const { setShowSearch, query, setQuery } = useContext(DataContext);
   return (
     <div
-      className="w-full h-fit flex justify-center py-20   "
+      className="w-full h-fit flex justify-center pt-20 pb-2   "
       onClick={() => setShowSearch(false)}
     >
       <input
