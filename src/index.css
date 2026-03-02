@@ -34,3 +34,24 @@
   --border: #3e3e3e;
   --logo: rgb(41, 41, 43);
 }
+
+.container::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px;
+  background-color: #333;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #707175;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

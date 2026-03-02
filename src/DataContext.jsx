@@ -18,17 +18,20 @@ function DataProvider({ children }) {
   // const KEY = "614e0310";
   const KEY = "b4dd08b";
   // const KEY = "27e203c1";
-  // const query = "12th fail  ";
 
   useEffect(() => {
     if (query.length < 3) return;
     async function fetchMovies() {
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-      );
-      const data = await res.json();
-      console.log(data);
-      setSearchedMovie(data.Search || []);
+      try {
+        const res = await fetch(
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+        );
+        const data = await res.json();
+        console.log(data);
+        setSearchedMovie(data.Search || []);
+      } catch (err) {
+        console.log(err);
+      }
     }
     fetchMovies();
   }, [query]);

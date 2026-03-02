@@ -11,15 +11,15 @@ function App() {
   return (
     <DataProvider>
       {/* <MovieProvider> */}
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="details/:title" element={<DetailsPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
       {/* </MovieProvider> */}
     </DataProvider>
   );

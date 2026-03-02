@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MovieCard({ sliderMovie }) {
   return (
     <div className="h-130 w-full bg-[url(/src/assets/sliderbg.png)] bg-cover bg-center rounded-2xl ">
@@ -17,9 +19,11 @@ function MovieCard({ sliderMovie }) {
             >
               Watch Now
             </a>
-            <button className="text-lg font-semibold py-3 rounded-4xl px-10 border-2 border-border bg-button cursor-grab">
-              Details
-            </button>
+            <Link to={`details/${sliderMovie.Title}`}>
+              <button className="text-lg font-semibold py-3 rounded-4xl px-10 border-2 border-border bg-button cursor-grab">
+                Details
+              </button>
+            </Link>
           </div>
         </div>
         <img
