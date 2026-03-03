@@ -6,7 +6,18 @@ import Card from "./Card";
 import SkeletonCard from "./SkeletonCard";
 function MovieSection({ title, movies }) {
   return (
-    <div className=" h-fit w-full px-40 py-10 text-text text-3xl">
+    <div
+      id={
+        title === "Latest Movies"
+          ? "Trending"
+          : title === "Best TV shows"
+            ? "TV-Shows"
+            : title === "Top Picks"
+              ? "Movies"
+              : ""
+      }
+      className=" h-fit w-full px-40 py-10 text-text text-3xl"
+    >
       <h1 className="pb-10">{title}...</h1>
       <Swiper
         id="cardContainer"
@@ -14,7 +25,7 @@ function MovieSection({ title, movies }) {
           "--swiper-navigation-color": "#fff",
           "--swiper-navigation-size": "28px",
         }}
-        loop={true}
+        loop={movies.length > 5}
         spaceBetween={25}
         slidesPerView={5}
         // centeredSlides={true}

@@ -12,10 +12,10 @@ function MovieCard({ sliderMovie }) {
             <p>{sliderMovie.Year}</p>
           </div>
           <p className="text-lg text-lightText">{sliderMovie.Plot}</p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <a
               href={`https://vidsrc.to/embed/movie/${sliderMovie.imdbID}`}
-              className="text-lg font-semibold py-3 rounded-4xl px-6 border-2 border-border bg-indigo-800 cursor-grab"
+              className="h-14 px-6 py-2 text-xl border-2 border-border text-center no-underline  rounded-3xl"
             >
               Watch Now
             </a>

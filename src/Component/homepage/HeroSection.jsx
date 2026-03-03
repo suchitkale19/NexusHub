@@ -25,7 +25,7 @@ function HeroSection() {
           "--swiper-pagination-bullet-border-radius": "10px",
           "--swiper-pagination-bullet-height": "5px",
         }}
-        loop={true}
+        loop={sliderMovies.length > 5}
         spaceBetween={50}
         slidesPerView={1}
         navigation={true}

@@ -11,11 +11,11 @@ function HomePage() {
     latestMovies,
     oscarMovies,
     animeSeries,
-    showSearch,
+   
   } = useContext(DataContext);
   return (
     <div className="bg-background ">
-      {showSearch && <SearchPage />}
+      {/* {showSearch && <SearchPage />} */}
       <HeroSection />
       <MovieSection title={"Latest Movies"} movies={latestMovies} />
       <MovieSection title={"Top Picks"} movies={topPicks} />

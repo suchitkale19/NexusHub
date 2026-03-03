@@ -6,6 +6,7 @@ import DualButtons from "../Component/common/DualButtons";
 import MovieGenre from "../Component/Details/MovieGenre";
 import MovieDetails from "../Component/Details/MovieDetails1";
 import MovieDetails2 from "../Component/Details/MovieDetails2";
+import SearchPage from "../Component/common/SearchPage";
 
 function DetailsPage() {
   const { setMovie, detailedMovie } = useContext(DataContext);
@@ -17,9 +18,14 @@ function DetailsPage() {
 
   return (
     <div className="bg-background">
+      {/* {showSearch && <SearchPage />} */}
       <div className=" flex gap-20 text-text px-44 py-10">
         <div className="">
-          <img className="h-111 w-auto rounded-3xl" src={Poster} />
+          <img
+            className="h-111 w-auto rounded-3xl"
+            src={Poster === "N/A" ? "/src/assets/poster.avif" : Poster}
+            alt={Title}
+          />
         </div>
         <div className="flex flex-col gap-4 w-3/4">
           <MovieTitle />

@@ -2,12 +2,9 @@ import { useContext } from "react";
 import { DataContext } from "../../DataContext";
 
 function SearchBar() {
-  const { setShowSearch, query, setQuery } = useContext(DataContext);
+  const { query, setQuery } = useContext(DataContext);
   return (
-    <div
-      className="w-full h-fit flex justify-center pt-20 pb-2   "
-      onClick={() => setShowSearch(false)}
-    >
+    <div className="w-full h-fit flex justify-center pt-20 pb-2   ">
       <input
         onClick={(e) => e.stopPropagation()}
         className="w-1/2 h-12 text-xl rounded-xl px-18 relative bg-background"

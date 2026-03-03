@@ -2,10 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./Component/common/Footer";
 import Navbar from "./Component/common/Navbar";
 import { DataProvider } from "./DataContext";
-import HomePage from "./Pages/homePage";
+import HomePage from "./Pages/HomePage";
 import DetailsPage from "./Pages/DetailsPage";
 import PageNotFound from "./Pages/PageNotFound";
-// import { MovieProvider } from "./MovieContext";
 
 function App() {
   return (

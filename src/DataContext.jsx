@@ -37,6 +37,7 @@ function DataProvider({ children }) {
   }, [query]);
 
   useEffect(() => {
+    if (movie) return;
     async function fetchMovies() {
       const res = await fetch(
         `http://www.omdbapi.com/?apikey=${KEY}&t=${movie}`,
