@@ -13,7 +13,7 @@ function HeroSection() {
     <>
       <Swiper
         key={sliderMovies.length}
-        id="cardContainer"
+        id="Home"
         style={{
           padding: "0px 200px",
           display: "flex",

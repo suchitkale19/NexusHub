@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function MovieCard({ sliderMovie }) {
   return (
-    <div className="h-130 w-full bg-[url(/src/assets/sliderbg.png)] bg-cover bg-center rounded-2xl ">
-      <div className="h-full w-full rounded-2xl  flex items-center justify-between px-20 bg-linear-to-t from-background via-transparent via-90% to-background text-text text-5xl">
-        <div className="w-1/2 flex flex-col gap-5">
+    <div className="lg:h-130 sm:h:200  w-full bg-[url(/src/assets/sliderbg.png)] bg-cover bg-center rounded-2xl ">
+      <div className="h-full w-full rounded-2xl  flex items-center justify-between px-20 bg-linear-to-t from-background via-transparent via-90% to-background text-text lg:text-5xl sm:text-3xl text:3xl">
+        <div className={`lg:w-1/2 w-full flex flex-col gap-5`}>
           <h1>{sliderMovie.Title}</h1>
           <div className="flex gap-20 text-lg text-lightText">
             <p>{sliderMovie.Runtime}.</p>
@@ -27,7 +27,7 @@ function MovieCard({ sliderMovie }) {
           </div>
         </div>
         <img
-          className="border-2 border-border rounded-2xl"
+          className="border-2 lg:flex hidden border-border rounded-2xl"
           src={sliderMovie.Poster}
           alt={sliderMovie.Title}
         />
