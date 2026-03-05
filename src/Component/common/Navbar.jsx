@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { DataContext } from "../../DataContext";
 import { Link } from "react-router-dom";
 import SearchPage from "./SearchPage";
+import SideBar from "./SideBar";
 
 function Navbar() {
   const { setShowSearch, showSearch } = useContext(DataContext);

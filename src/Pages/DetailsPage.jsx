@@ -7,18 +7,22 @@ import MovieGenre from "../Component/Details/MovieGenre";
 import MovieDetails from "../Component/Details/MovieDetails1";
 import MovieDetails2 from "../Component/Details/MovieDetails2";
 import SearchPage from "../Component/common/SearchPage";
+import SkeletonDetailPage from "../Component/Details/SkeletonDetailPage";
 
 function DetailsPage() {
   const { setMovie, detailedMovie } = useContext(DataContext);
-  const title = useParams();
+  const { title } = useParams();
   useEffect(() => {
-    setMovie(title.title);
+    setMovie(title);
   }, [setMovie, title]);
+
+  if (!detailedMovie) {
+    return <SkeletonDetailPage />;
+  }
   const { Title, Poster, Type, Plot, imdbID, Genre } = detailedMovie;
 
   return (
     <div className="bg-background">
-      {/* {showSearch && <SearchPage />} */}
       <div className=" flex gap-20 text-text px-44 py-10">
         <div className="">
           <img

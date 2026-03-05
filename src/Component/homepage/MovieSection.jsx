@@ -16,7 +16,7 @@ function MovieSection({ title, movies }) {
               ? "Movies"
               : ""
       }
-      className=" h-fit w-full px-40 py-10 text-text text-3xl"
+      className=" h-fit w-full md:px-40 px-2 py-10 text-text text-3xl"
     >
       <h1 className="pb-10">{title}...</h1>
       <Swiper

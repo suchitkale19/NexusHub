@@ -16,8 +16,8 @@ function DataProvider({ children }) {
   const [showSearch, setShowSearch] = useState(false);
   const [query, setQuery] = useState("");
   // const KEY = "614e0310";
-  const KEY = "b4dd08b";
-  // const KEY = "27e203c1";
+  // const KEY = "b4dd08b";
+  const KEY = "27e203c1";
 
   useEffect(() => {
     if (query.length < 3) return;
@@ -27,7 +27,6 @@ function DataProvider({ children }) {
           `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
         );
         const data = await res.json();
-        console.log(data);
         setSearchedMovie(data.Search || []);
       } catch (err) {
         console.log(err);
@@ -37,13 +36,14 @@ function DataProvider({ children }) {
   }, [query]);
 
   useEffect(() => {
-    if (movie) return;
+    if (movie === undefined) return;
     async function fetchMovies() {
       const res = await fetch(
         `http://www.omdbapi.com/?apikey=${KEY}&t=${movie}`,
       );
       const data = await res.json();
-      console.log(data);
+      console.log(movie);
+
       setDetailedMovie(data);
     }
     fetchMovies();

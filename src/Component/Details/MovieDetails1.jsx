@@ -1,28 +1,3 @@
-// function MovieDetails({ detailedMovie }) {
-//   const details = [
-//     { label: "Awards", value: detailedMovie.Awards },
-//     { label: "Actors", value: detailedMovie.Actors },
-//     { label: "IMDb Votes", value: detailedMovie.imdbVotes },
-//     { label: "Box Office", value: detailedMovie.BoxOffice },
-//     { label: "Country", value: detailedMovie.Country },
-//     { label: "Director", value: detailedMovie.Director },
-//     { label: "Writer", value: detailedMovie.Writer },
-//     { label: "Language", value: detailedMovie.Language },
-//   ];
-
-//   return (
-//     <div className="grid grid-cols-2 gap-4 text-xl font-semibold">
-//       {details.map(({ label, value }) => (
-//         <div key={label}>
-//           <h2 className="text-zinc-400 ">{label} :</h2>
-//           <p className="">{value}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default MovieDetails;
 function MovieDetails({ detailedMovie }) {
   const detail1 = [
     { label: "Box Office", value: detailedMovie.BoxOffice },

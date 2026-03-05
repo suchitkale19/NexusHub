@@ -8,9 +8,9 @@ function SkeletonMovieCard() {
           <div className="w-1/2 grid gap-4 ">
             <Skeleton height={80} width="50%" />
             <div className="flex justify-between ">
-              <Skeleton height={20} width={200} />
-              <Skeleton height={20} width={200} />
-              <Skeleton height={20} width={200} />
+              <Skeleton height={20} width={100} />
+              <Skeleton height={20} width={100} />
+              <Skeleton height={20} width={100} />
             </div>
             <div className="grid m-0 p-0 gap-0">
               <Skeleton height={20} />
