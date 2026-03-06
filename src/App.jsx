@@ -5,14 +5,12 @@ import { DataProvider } from "./DataContext";
 import HomePage from "./Pages/HomePage";
 import DetailsPage from "./Pages/DetailsPage";
 import PageNotFound from "./Pages/PageNotFound";
-import SideBar from "./Component/common/SideBar";
 
 function App() {
   return (
     <DataProvider>
       {/* <MovieProvider> */}
       <BrowserRouter>
-        {/* <SideBar /> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

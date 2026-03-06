@@ -16,6 +16,7 @@ function HeroSection() {
         id="Home"
         style={{
           padding: "0px 200px",
+
           display: "flex",
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-bullet-inactive-color": "#666",
@@ -24,6 +25,17 @@ function HeroSection() {
           "--swiper-pagination-bullet-width": "40px",
           "--swiper-pagination-bullet-border-radius": "10px",
           "--swiper-pagination-bullet-height": "5px",
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 50,
+            style: { padding: "0px 200px" },
+          },
         }}
         loop={sliderMovies.length > 5}
         spaceBetween={50}
@@ -35,7 +47,6 @@ function HeroSection() {
           disableOnInteraction: false,
         }}
         modules={[Navigation, Pagination, Autoplay]}
-        // loopAdditionalSlides={1}
         observer={true}
         observeParents={true}
       >

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../../DataContext";
 import { Link } from "react-router-dom";
 import SearchPage from "./SearchPage";
@@ -6,14 +6,21 @@ import SideBar from "./SideBar";
 
 function Navbar() {
   const { setShowSearch, showSearch } = useContext(DataContext);
+  const [sideBar, setSideBar] = useState(false);
   const pages = ["Home", "Movies", "TV-Shows", "Trending"];
   return (
     <>
       {showSearch && <SearchPage />}
+      {sideBar && <SideBar setSideBar={setSideBar} />}
       <div className="h-18 lg:h-28 w-full bg-background text-text flex justify-between items-center lg:px:20 px-10 ">
         <div className="flex justify-between gap-20">
           <div className="flex items-center gap-2">
-            <div className="lg:hidden text-2xl">☰</div>
+            <div
+              onClick={() => setSideBar(!sideBar)}
+              className="lg:hidden text-2xl"
+            >
+              ☰
+            </div>
             <Link to={"/"}>
               <h1 className="text-xl lg:text-4xl pt-1 font-serif ">
                 Nexus Hub
