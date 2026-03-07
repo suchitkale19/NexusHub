@@ -7,7 +7,7 @@ function Card({ movie }) {
     <div className="h-fit w-auto  rounded-2xl text-text">
       <Link to={`details/${movie.Title}`}>
         <img
-          className="h-80 rounded-2xl w-full object-cover"
+          className="lg:h-80 md:h-112 h-60 rounded-2xl w-full object-cover"
           src={movie.Poster}
           alt={movie.Title}
         />
@@ -19,7 +19,7 @@ function Card({ movie }) {
         >
           {movie.Title}
         </h1>
-        <div className="flex w-full justify-between text-lg text-lightText">
+        <div className="flex flex-wrap w-full justify-between text-lg text-lightText">
           <h2>{movie.Runtime}.</h2>
           <h2>⭐{movie.imdbRating}</h2>
           <h2>{movie.Year}</h2>

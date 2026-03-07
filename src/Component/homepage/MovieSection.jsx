@@ -16,9 +16,9 @@ function MovieSection({ title, movies }) {
               ? "Movies"
               : ""
       }
-      className=" h-fit w-full md:px-40 px-2 py-10 text-text text-3xl"
+      className=" h-fit w-full lg:px-40 px-2 lg:py-10 py-2 text-text lg:text-3xl text-2xl"
     >
-      <h1 className="pb-10">{title}...</h1>
+      <h1 className="lg:pb-10 pb-4">{title}...</h1>
       <Swiper
         id="cardContainer"
         style={{
